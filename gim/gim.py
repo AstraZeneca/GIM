@@ -85,14 +85,14 @@ def calculate_lower_upper_ratio(gene_i, gene_j, treatment_replicates, control_re
 
 def gim_transform(df_treatment, df_control):
     """
-    This function takes the treatment and control files for a sample and returns a transformed GIP image-like matrix.
+    This function takes the treatment and control files for a sample and returns a transformed GIM image-like matrix.
     If control does not exist, Take the mean of the entire dataset or use your own problem specific logic.
     Arguments:
         df_treatment (pandas dataframe): Dataframe containing treatment replicates. (n_t, n_g)
         df_control (pandas dataframe): Dataframe contraining control replicates. (n_c, n_g)
     
     Returns:
-        transformed_mat (numpy array): Transformed GIP image-like matrix for CNN prediction. (n_g, n_g)
+        transformed_mat (numpy array): Transformed GIM image-like matrix for CNN prediction. (n_g, n_g)
     """
     
     treatment_replicates = df_treatment.values
@@ -110,7 +110,7 @@ def gim_transform(df_treatment, df_control):
         print("Error: Please enter replicates with same gene set and shape")
     else:
         
-        # Final size of the GIP matrix
+        # Final size of the GIM matrix
         # Based on number of selected genes
         N = treatment_replicates[0].shape[0]
         transformed_mat = np.zeros((N, N))
