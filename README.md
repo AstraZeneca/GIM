@@ -28,4 +28,4 @@ sample_img = gim.gim_transform(df_control_replicates, df_treatement_replicates)
 ```
 
 # Reference
-TBD
+Pre-print: https://www.biorxiv.org/content/10.1101/2021.09.07.459284v1
